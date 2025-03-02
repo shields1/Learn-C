@@ -18,6 +18,10 @@ https://github.com/practical-tutorials/project-based-learning#cc
 **5.Teach Yourself Computer Science** \
 https://teachyourselfcs.com/
 
+## Datastructures and Algorithms 
+**1. How to implement a hash table (in C)**
+https://benhoyt.com/writings/hash-table-in-c/
+
 ## Books
 **1. The hidden language of Computer Hardware and Software** \
 https://charlespetzold.com/code/
@@ -45,7 +49,6 @@ If you liked the low-level parts of Dive Into Systems, this is the next step.
 **2. The Elements of Computing Systems (Nand2Tetris) – Noam Nisan & Shimon Schocken**
 Walks you through building a computer from scratch, from logic gates to a full-fledged OS.
 Comes with online projects—super interactive!
-
 
 
 ## Systems Programming & Performance Optimization
