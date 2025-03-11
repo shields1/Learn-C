@@ -22,13 +22,13 @@ Topics: Hello World, printf, variables, loops
 Hands-on:
 
 Write and run hello.c:
-
+```C
 #include <stdio.h>
 int main() {
     printf("Hello, world!\n");
     return 0;
 }
-
+```
 Modify it to take user input (scanf).
 
 
