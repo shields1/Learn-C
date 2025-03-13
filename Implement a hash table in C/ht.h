@@ -1,4 +1,3 @@
-#include <cwchar>
 #include <stdio.h>
 
 // TODO: Implement ht_remove.

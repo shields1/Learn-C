@@ -2,6 +2,14 @@
 *
 * hash_table.c
 *
+* Example usage:
+* $ echo 'foo bar the bar bar bar the' | ./demo
+* foo 1
+* bar 4
+* the 2
+* 3
+*
+*
 * If you don’t know how a hash table works, here’s a quick refresher. 
 * A hash table i* s a container data structure that allows you to quickly look up a key (often a string) 
 * to find its corresponding value (any data type). Under the hood, they’re arrays that are indexed by a hash function of the key.
@@ -18,3 +26,15 @@
 * jane  10985288698319103569 1
 * x     12638214688346347271 7 (same as foo)
 */
+#include <stdio.h>
+#include <stdlib.h>
+#include "hash_table.h"
+
+void exit_nomem(void) {
+    fprintf(stderr, "out of memory\n");
+    exit(EXIT_FAILURE);
+}
+
+int main() {
+    h
+}
