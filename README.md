@@ -32,7 +32,7 @@ https://diveintosystems.org/
 **3. Beejs Networking Guide:** \
 https://beej.us/guide/bgnet/
 
-**4. High Performance Browser Networking - Ilya Grigorik: **
+**4. High Performance Browser Networking - Ilya Grigorik:** \
 https://hpbn.co/
 
 ## Operating Systems & Low-Level Programming
