@@ -15,7 +15,7 @@ https://github.com/jflaherty/ptrtut13
 **4. Projects for later on:** \
 https://github.com/practical-tutorials/project-based-learning#cc
 
-**5.Teach Yourself Computer Science** \
+**5. Teach Yourself Computer Science** \
 https://teachyourselfcs.com/
 
 ## Datastructures and Algorithms 
@@ -32,16 +32,19 @@ https://diveintosystems.org/
 **3. Beejs Networking Guide:** \
 https://beej.us/guide/bgnet/
 
+**4. High Performance Browser Networking - Ilya Grigorik: **
+https://hpbn.co/
+
 ## Operating Systems & Low-Level Programming
 **1. Operating Systems: Three Easy Pieces – Remzi H. Arpaci-Dusseau & Andrea C. Arpaci-Dusseau**
 A fantastic, free book that covers memory management, scheduling, file systems, and concurrency in a clear and engaging way.
 Great next step after Dive Into Systems.
 
-**2.Modern Operating Systems – Andrew S. Tanenbaum**
+**2. Modern Operating Systems – Andrew S. Tanenbaum**
 A more detailed and academic approach to OS concepts like processes, scheduling, and security.
 
 ## Computer Architecture & Hardware
-**1.Computer Organization and Design – David A. Patterson & John L. Hennessy**
+**1. Computer Organization and Design – David A. Patterson & John L. Hennessy**
 A hands-on introduction to computer architecture using MIPS assembly.
 If you liked the low-level parts of Dive Into Systems, this is the next step.
 
@@ -58,7 +61,7 @@ Known as CS:APP, this book is gold for systems programmers. Covers assembly, mem
 Perfect if you want to understand how C, compilers, and OS interact at a deep level.
 
 
-**2.High Performance Browser Networking – Ilya Grigorik (Free online)**
+**2. High Performance Browser Networking – Ilya Grigorik (Free online)**
 A must-read for those interested in networking, TCP/IP, and performance optimization.
 
 ## Compilers & Programming Language Internals
@@ -70,7 +73,7 @@ The classic book on compilers, but dense. Only recommended if you're serious abo
 
 ## Security & Hacking (Bonus)
 
-**1.Hacking: The Art of Exploitation – Jon Erickson**
+**1. Hacking: The Art of Exploitation – Jon Erickson**
 Teaches you hacking by understanding low-level memory, buffer overflows, and assembly programming.
 
 A good hands-on book if security interests you.
