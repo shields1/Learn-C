@@ -35,6 +35,9 @@ https://beej.us/guide/bgnet/
 **4. High Performance Browser Networking - Ilya Grigorik:** \
 https://hpbn.co/
 
+**?. The Art of Computer Programming (TAOCP): ** \
+https://www-cs-faculty.stanford.edu/~knuth/taocp.html
+
 ## Operating Systems & Low-Level Programming
 **1. Operating Systems: Three Easy Pieces – Remzi H. Arpaci-Dusseau & Andrea C. Arpaci-Dusseau**
 A fantastic, free book that covers memory management, scheduling, file systems, and concurrency in a clear and engaging way.
