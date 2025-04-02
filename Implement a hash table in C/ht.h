@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <stdbool.h>
 // TODO: Implement ht_remove.
 // Tricky with linear probing (due to the "holes" that are left.
 
@@ -8,18 +8,18 @@
 typedef struct ht ht;
 
 // Create hash table and return pointer to it, or NULL if out of memory
-ht *ht_create(void);
+ht* ht_create(void);
 
 // Free memory allocated for hash table, including allocated keys
 void ht_destory(ht *table);
 
-// Get itme with give key (NUL-terminated) from hash table.
+// Get item with give key (NUL-terminated) from hash table.
 // Return value (which was set with ht_set), or NULL if key not found.
 void *ht_get(ht *table, const char *key);
 
 // Set item with give key (NUL-terminated) to value (which must not be NULL).
 // If not already present in table, key is copied to newly allocated memory
-// (keys are freed automatically when ht_destory is called).
+// (keys are freed automatically when ht_destroy is called).
 // Return address of copied key, or NULL if out of memory.
 const char *ht_set(ht *table, const char *key, void *value);
 

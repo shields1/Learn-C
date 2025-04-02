@@ -1,6 +1,6 @@
 /*
 *
-* hash_table.c
+* demo.c
 *
 * Example usage:
 * $ echo 'foo bar the bar bar bar the' | ./demo
