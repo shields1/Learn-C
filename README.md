@@ -21,6 +21,7 @@ https://teachyourselfcs.com/
 ## Datastructures and Algorithms 
 **1. How to implement a hash table (in C)**
 https://benhoyt.com/writings/hash-table-in-c/
+https://craftinginterpreters.com/hash-tables.html
 
 ## Books
 **1. The hidden language of Computer Hardware and Software** \
