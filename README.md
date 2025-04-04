@@ -10,12 +10,14 @@ https://www.youtube.com/watch?v=QZwneRb-zqA
 https://www.youtube.com/playlist?list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo
 
 **3. A TUTORIAL ON POINTERS AND ARRAYS IN C** \
-https://github.com/jflaherty/ptrtut13
 
-**4. Projects for later on:** \
+**4. Computer enhanced:** \
+https://www.computerenhance.com/p/table-of-contents
+
+**5. Projects for later on:** \
 https://github.com/practical-tutorials/project-based-learning#cc
 
-**5. Teach Yourself Computer Science** \
+**6. Teach Yourself Computer Science** \
 https://teachyourselfcs.com/
 
 ## Datastructures and Algorithms 
