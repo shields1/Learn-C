@@ -9,7 +9,8 @@ https://www.youtube.com/watch?v=QZwneRb-zqA
 **2. A crasch course in Computer Science** \
 https://www.youtube.com/playlist?list=PL8dPuuaLjXtNlUrzyH5r6jN9ulIgZBpdo
 
-**3. A TUTORIAL ON POINTERS AND ARRAYS IN C** \
+**3. A TUTORIAL ON POINTERS AND ARRAYS IN C:**\
+https://github.com/jflaherty/ptrtut13
 
 **4. Computer enhanced:** \
 https://www.computerenhance.com/p/table-of-contents
