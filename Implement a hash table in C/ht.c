@@ -5,7 +5,6 @@
 */
 #include "ht.h"
 #include <assert.h>
-#include <cstddef>
 #include <stdbool.h>
 #include <stddef.h>
 #include <stdint.h>
@@ -91,82 +90,82 @@ void* ht_get(ht *table, const char *key) {
 
 // Internal function to set an entry (without expanding table).
 static const char* ht_set_entry(ht_entry *entries, size_t capacity,
-        const char *key, void *value, size_t *plength) {
-    // AND hash with capacity-1 to ensure it's within entries array.
-    uint64_t hash = hash_key(key);
-    size_t index = (size_t)(hash & (uint64_t)(capacity - 1));
+    const char *key, void *value, size_t *plength) {
+// AND hash with capacity-1 to ensure it's within entries array.
+uint64_t hash = hash_key(key);
+size_t index = (size_t)(hash & (uint64_t)(capacity - 1));
 
-    // Loop till we find an empty entry.
-    while (entries[index].key != NULL) {
-        if (strcmp(key, entries[index].key) == 0) {
-            // Found key (it already exists), update value.
-            entries[index].value = value;
-            return entries[index].key;
-        }
-        // Key wasn't in this slot, move to next (linear probing).
-        index++;
-        if (index >= capacity) {
-            // At end of entries array, wrap around.
-            index = 0;
-        }
+// Loop till we find an empty entry.
+while (entries[index].key != NULL) {
+    if (strcmp(key, entries[index].key) == 0) {
+        // Found key (it already exists), update value.
+        entries[index].value = value;
+        return entries[index].key;
     }
+    // Key wasn't in this slot, move to next (linear probing).
+    index++;
+    if (index >= capacity) {
+        // At end of entries array, wrap around.
+        index = 0;
+    }
+}
 
-    // Didn't find key, allocate+copy if needed, then insert it.
-    if (plength != NULL) {
-        key = strdup(key);
-        if (key == NULL) {
-            return NULL;
-        }
-        (*plength)++;
+// Didn't find key, allocate+copy if needed, then insert it.
+if (plength != NULL) {
+    key = strdup(key);
+    if (key == NULL) {
+        return NULL;
     }
-    entries[index].key = (char*)key;
-    entries[index].value = value;
-    return key;
+    (*plength)++;
+}
+entries[index].key = (char*)key;
+entries[index].value = value;
+return key;
 }
 
 // Expand hash table to twice its current size. Return true on success,
 // false if out of memory.
 static bool ht_expand(ht *table) {
-    // Allocate new entires array.
-    size_t new_capacity = table->capacity * 2;
-    if (new_capacity < table->capacity) {
-        return false; // overflow (capacity would be too big)
-    }
-    ht_entry *new_entries = calloc(new_capacity, sizeof(ht_entry));
-    if (new_entries == NULL) {
-        return false;
-    }
+// Allocate new entires array.
+size_t new_capacity = table->capacity * 2;
+if (new_capacity < table->capacity) {
+    return false; // overflow (capacity would be too big)
+}
+ht_entry *new_entries = calloc(new_capacity, sizeof(ht_entry));
+if (new_entries == NULL) {
+    return false;
+}
 
-    // Iterate entires, move all non-empty ones to new table's entries.
-    for (size_t i = 0; i < table->capacity; i++) {
-        ht_entry entry = table->entries[i];
-        if (entry.key != NULL) {
-            ht_set_entry(new_entries, new_capacity, entry.key, entry.value, NULL);
-        }
+// Iterate entires, move all non-empty ones to new table's entries.
+for (size_t i = 0; i < table->capacity; i++) {
+    ht_entry entry = table->entries[i];
+    if (entry.key != NULL) {
+        ht_set_entry(new_entries, new_capacity, entry.key, entry.value, NULL);
     }
+}
 
-    // Free old entries array and update this table's details.
-    free(table->entries);
-    table->entries = new_entries;
-    table->capacity = new_capacity;
-    return true;
+// Free old entries array and update this table's details.
+free(table->entries);
+table->entries = new_entries;
+table->capacity = new_capacity;
+return true;
 }
 
 const char* ht_set(ht *table, const char *key, void *value) {
-    assert(value != NULL);
-    if (value == NULL) {
+assert(value != NULL);
+if (value == NULL) {
+    return NULL;
+}
+
+// If length will exceed half of current capacity, expand it.
+if (table->length >= table->capacity / 2) {
+    if(!ht_expand(table)) {
         return NULL;
     }
+}
 
-    // If length will exceed half of current capacity, expand it.
-    if (table->length >= table->capacity / 2) {
-        if(!ht_expand(table)) {
-            return NULL;
-        }
-    }
-
-    // Set entry and update length.
-    return ht_set_entry(table->entries, table->capacity, key, value, &table->length);
+// Set entry and update length.
+return ht_set_entry(table->entries, table->capacity, key, value, &table->length);
 }
 
 size_t ht_length(ht *table) {

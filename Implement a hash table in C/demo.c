@@ -15,7 +15,7 @@
 * to find its corresponding value (any data type). Under the hood, they’re arrays that are indexed by a hash function of the key.
 
 * A hash function turns a key into a random-looking number, and it must always return the same number given the same key. 
-* For example, with the hash function we’re going to us* e (64-bit FNV-1a), the hashes of the keys above are as follows:
+* For example, with the hash function we’re going to use (64-bit FNV-1a), the hashes of the keys above are as follows:
 *
 * Key   Hash                 Hash modulo 16
 * bar   16101355973854746    10
@@ -28,7 +28,7 @@
 */
 #include <stdio.h>
 #include <stdlib.h>
-#include "hash_table.h"
+#include "ht.h"
 
 void exit_nomem(void) {
     fprintf(stderr, "out of memory\n");
@@ -36,5 +36,43 @@ void exit_nomem(void) {
 }
 
 int main() {
-    h
+    ht *counts = ht_create();
+    if (counts == NULL) {
+        exit_nomem();
+    }
+
+    // read next word from stdin (at most 100 chars long).
+    char word[101];
+    while (scanf("%100s", word) != EOF) {
+        // look up word
+        void *value = ht_get(counts, word);
+        if (value != NULL) {
+            // Already exists, increment int that value points to.
+            int *pcount = (int *)value;
+            (*pcount)++;
+            continue;
+        }
+        // Word not found, allocate space for new int and set to 1.
+        int *pcount = malloc(sizeof(int));
+        if (pcount == NULL) {
+            exit_nomem();
+        }
+        *pcount = 1;
+        if (ht_set(counts, word, pcount) == NULL) {
+            exit_nomem();
+        }
+    }
+
+    // Print out words and frequencies, freeing values as we go.
+    hti it = ht_iterator(counts);
+    while (ht_next(&it)) {
+        printf("%s %d\n", it.key, *(int *)it.value);
+        free(it.value);
+    }
+
+    // Show the number of unique words.
+    printf("\nUnique number of words: %d\n", (int)ht_length(counts));
+
+    ht_destroy(counts);
+    return 0;
 }

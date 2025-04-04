@@ -11,7 +11,7 @@ typedef struct ht ht;
 ht* ht_create(void);
 
 // Free memory allocated for hash table, including allocated keys
-void ht_destory(ht *table);
+void ht_destroy(ht *table);
 
 // Get item with give key (NUL-terminated) from hash table.
 // Return value (which was set with ht_set), or NULL if key not found.
